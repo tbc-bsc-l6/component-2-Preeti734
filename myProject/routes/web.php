@@ -29,3 +29,12 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+//Admin
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+    Route::namespace('Auth')->group(function(){
+        //login route
+        Route::get('login','AuthenticatedSessionController@create')->name('login');
+
+    });
+});
