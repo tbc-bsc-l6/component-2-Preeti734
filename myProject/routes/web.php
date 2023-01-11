@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,8 +29,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware('auth','is_admin')->group(function(){
+    Route::get('/admin',[AdminController::class, 'index'])->name('admin.dashboard');
+
+});
+
 require __DIR__.'/auth.php';
-require __DIR__.'/admin.php';
+
+
+
+
 
 
 

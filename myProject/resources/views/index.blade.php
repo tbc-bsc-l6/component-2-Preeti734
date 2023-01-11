@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-	<title>Footwear - Free Bootstrap 4 Template by Colorlib</title>
+	<title>Footwear</title>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -77,8 +77,8 @@
 							
                                  
 								<!-- <li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li> -->
-								<li class="cart"><a href="cart.html">Register</a>
-								<li class="cart"><a href="cart.html">Login</a>
+								<li class="cart"><a href="{{ route('register') }}">Register</a>
+								<li class="cart"><a href="{{ route('login') }}">Login</a>
 									
 								
 							</ul>
@@ -488,14 +488,7 @@
 			</div>
 			<div class="copy">
 				<div class="row">
-					<div class="col-sm-12 text-center">
-						<p>
-							<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span> 
-							<span class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> , <a href="http://pexels.com/" target="_blank">Pexels.com</a></span>
-						</p>
-					</div>
+					<div class="col-sm-12 text-center">							
 				</div>
 			</div>
 		</footer>
