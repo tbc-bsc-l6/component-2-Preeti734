@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemplateController;
+use App\Http\Controllers\CrudController;
 
 
 /*
@@ -21,7 +22,7 @@ use App\Http\Controllers\TemplateController;
 //     return view('index');
 // });
 
-// Route::get('/','TemplateController@index');
+//to get front view
 Route::get("/",[TemplateController::class,"index"]);
 
 
@@ -36,11 +37,21 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth','is_admin')->group(function(){
-    Route::get('/admin',[AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin',[AdminController::class, 'index'])->name('admin.index');
 
 });
 
 require __DIR__.'/auth.php';
+
+//Insert data
+// Route::get('/',function(){
+//    return view ('crud');
+// });
+// Route::view('crud','insertRead');
+Route::post('insertData',[CrudController::class,'insert']);
+
+//Read data
+Route::get('crud',[CrudController::class,'readdata']);
 
 
 

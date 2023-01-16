@@ -8,6 +8,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
 	
+	{{ URL::asset('css/css.css') }}
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="{{asset ('assets/css/animate.css')}}">
 	<!-- Icomoon Icon Fonts-->
@@ -22,7 +24,7 @@
 	<link rel="stylesheet" href="{{asset ('assets/css/flexslider.css')}}">
 	<!-- Owl Carousel -->
 	<link rel="stylesheet" href="{{asset ('assets/css/owl.carousel.min.css')}}">
-	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
 	<!-- Date Picker -->
 	<link rel="stylesheet" href="{{asset ('assets/css/bootstrap-datepicker.css')}}">
 	<!-- Flaticons  -->

@@ -15,10 +15,13 @@ class AdminMiddleware
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-    {
+    {  
+        //if not authenticated user then redirect to 403 forbidden page
         if(!auth()->user()|| !auth()->user()->is_admin){
             abort(403);
         }
+        // since in middleware return does not mean to return the value
+        // from the function above it ask to return the next request in middleware
         return $next($request);
     }
 }
