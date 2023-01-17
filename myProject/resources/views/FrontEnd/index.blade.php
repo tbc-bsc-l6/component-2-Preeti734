@@ -37,7 +37,7 @@
 							
                                  
 								<!-- <li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li> -->
-								<li class="cart"><a href="{{ route('register') }}">Register</a>
+								<li class="cart"><a href="{{ route('register')}}">Register</a>
 								<li class="cart"><a href="{{ route('login') }}">Login</a>							
 							</ul>
 						</div>

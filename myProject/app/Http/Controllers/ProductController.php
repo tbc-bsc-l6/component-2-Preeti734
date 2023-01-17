@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\product;
 
-class CrudController extends Controller
+class ProductController extends Controller
 {
     //
     function insert(Request $req){
         $name = $req->get('ProductName');
+        $category = $req->get('ProductCategory');
         $price = $req->get('ProductPrice');
         $image = $req->file('ProductImage') -> getClientOriginalName();
         //move uploaded file
@@ -21,6 +22,7 @@ class CrudController extends Controller
          $product = new product();
          //since id is primary key ani autoincrement gareko cha teslai we dont need to mention
          $product -> ProductName =  $name;
+         $product -> Category = $category;
          $product -> ProductPrice =  $price;
          $product -> ProductImage =  $image;
          
@@ -31,7 +33,7 @@ class CrudController extends Controller
     }
     function readdata(){
         $productData = product::all();
-        return  view ('insertRead',['data' => $productData]);
+        return  view ('admin.insertRead',['data' => $productData]);
     }
 
     //update function
@@ -41,7 +43,7 @@ class CrudController extends Controller
        $ProductPrice = $req->get('ProductPrice');
 
        if ($req -> get('update')=='Update'){
-        return view ('updateView',['ProductId' => $id, 'ProductName'=>$ProductName, 'ProductPrice'=>$ProductPrice]);
+        return view ('admin.updateView',['ProductId' => $id, 'ProductName'=>$ProductName, 'Category'=>$category,'ProductPrice'=>$ProductPrice]);
        }
        else{
         $prod = product::find($id);

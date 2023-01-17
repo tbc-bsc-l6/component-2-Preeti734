@@ -1,8 +1,8 @@
-@extends ('crud')
+@extends ('admin.crud')
 @section('content')
 
 <div class = "col-md-4 m-auto border mt-3 p-2 border-info">
-    <h2 class="text-center text-warning">Update View</h2>
+    <h2 class="text-center text-secondary">Update View</h2>
 <form action="updateData" method="get">
     
 <div class="mb-2">
@@ -16,7 +16,7 @@
 </div>
 <br>
 <input type="hidden" name = "ProductId" value = "{{$ProductId}}">
-<button type="submit" class="btn btn-outline-warning rounded pill">Update</button>
+<button type="submit" class="btn btn-outline-secondary rounded pill">Update</button>
 </form>
 </div>
 @endsection

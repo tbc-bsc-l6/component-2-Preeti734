@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemplateController;
-use App\Http\Controllers\CrudController;
+use App\Http\Controllers\ProductController;
 
 
 /*
@@ -49,18 +49,18 @@ require __DIR__.'/auth.php';
 // });
 // Route::view('crud','insertRead');
 //used post since image is passed
-Route::post('insertData',[CrudController::class,'insert']);
+Route::post('insertData',[ProductController::class,'insert']);
 
 //Read data
-Route::get('crud',[CrudController::class,'readdata']);
+Route::get('crud',[ProductController::class,'readdata']);
 
 //to check the view and now it is commented as it is shown through function from controller
 // Route::view('update','updateView');
 
 //Update and Delete data
-Route::get('updatedelete',[CrudController::class, 'updateordelete']);
+Route::get('updatedelete',[ProductController::class, 'updateordelete']);
 
-Route::get('updateData',[CrudController::class, 'update']);
+Route::get('updateData',[ProductController::class, 'update']);
 
 
 
