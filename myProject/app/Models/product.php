@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class product extends Model
 {
     use HasFactory;
+    //primary key associated with table
+    protected $primaryKey = 'Id';
 }

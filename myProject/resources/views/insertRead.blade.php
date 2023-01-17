@@ -47,15 +47,22 @@
     <th>Product Name</th>
     <th>Product Price</th>
     <th>Product Image</th>
+    <th>Update</th>
+    <th>Delete</th>
+
 
   </thead>
   <tbody class = "text-danger bg-light fs-4">
   @foreach($data as $item)
     <tr>
-      <td class="pt-5">{{$item ['Id']}}</td>
-      <td class="pt-5">{{$item ['ProductName']}}</td>
-      <td  class="pt-5">{{$item ['ProductPrice']}}</td>
+      <form action="updatedelete" method="get">
+      <td class="pt-5"><input type="hidden" name = "Id" value="{{$item ['Id']}}">{{$item ['Id']}}</td>
+      <td class="pt-5"><input type="hidden" name = "ProductName" value="{{$item ['ProductName']}}">{{$item ['ProductName']}}</td>
+      <td  class="pt-5"><input type="hidden" name = "ProductPrice" value="{{$item ['ProductPrice']}}">{{$item ['ProductPrice']}}</td>
       <td><img src = "productImages/{{$item ['ProductImage']}}" width = "100px" height ="100px" alt=""></td>
+      <td class="pt-5"><input type="submit" class = "btn btn-outline-danger rounded-pill" name = "update" value="Update"></td>
+      <td class="pt-5"><input type="submit" class = "btn btn-outline-danger rounded-pill" value="Delete"></td>
+      </form>
     </tr>
     @endforeach
   </tbody>

@@ -48,10 +48,19 @@ require __DIR__.'/auth.php';
 //    return view ('crud');
 // });
 // Route::view('crud','insertRead');
+//used post since image is passed
 Route::post('insertData',[CrudController::class,'insert']);
 
 //Read data
 Route::get('crud',[CrudController::class,'readdata']);
+
+//to check the view and now it is commented as it is shown through function from controller
+// Route::view('update','updateView');
+
+//Update and Delete data
+Route::get('updatedelete',[CrudController::class, 'updateordelete']);
+
+Route::get('updateData',[CrudController::class, 'update']);
 
 
 

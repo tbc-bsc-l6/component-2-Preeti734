@@ -33,4 +33,31 @@ class CrudController extends Controller
         $productData = product::all();
         return  view ('insertRead',['data' => $productData]);
     }
+
+    //update function
+    function updateordelete(Request $req){
+       $id = $req->get('Id');
+       $ProductName = $req->get('ProductName');
+       $ProductPrice = $req->get('ProductPrice');
+
+       if ($req -> get('update')=='Update'){
+        return view ('updateView',['ProductId' => $id, 'ProductName'=>$ProductName, 'ProductPrice'=>$ProductPrice]);
+       }
+       else{
+        $prod = product::find($id);
+        $prod -> delete();
+       }
+       return redirect('crud');
+    }
+    function update(Request $req){
+        $ProductId = $req -> get('ProductId');
+        $ProductName = $req->get('ProductName');
+       $ProductPrice = $req->get('ProductPrice');
+
+       $prod = product::find($ProductId);
+       $prod -> ProductName = $ProductName;
+       $prod -> ProductPrice = $ProductPrice;
+       $prod -> save();
+       return redirect('crud');
+    }
 }
