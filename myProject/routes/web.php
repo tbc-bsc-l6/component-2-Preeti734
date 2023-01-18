@@ -31,14 +31,14 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/index', [AdminController::class, 'index'])->name('FrontEnd.index');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::middleware('auth','is_admin')->group(function(){
-    Route::get('/admin',[AdminController::class, 'index'])->name('admin.index');
-
+    Route::get('/dashboard',[AdminController::class, 'index'])->name('dashboard');
 });
 
 require __DIR__.'/auth.php';

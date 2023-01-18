@@ -33,12 +33,19 @@
 								</li>
 								<li><a href="women.html">Women</a></li>
 								<li><a href="about.html">About</a></li>
-								<li><a href="contact.html">Contact</a></li>
-							
+								<li><a href="contact.html">Contact</a></li>				
                                  
 								<!-- <li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li> -->
+								@if (Route::has('login'))
+								@auth
+								<x-app-layout>
+                                </x-app-layout>
+								<!-- <li class="cart"><a href="{{ route('login') }}">Logout</a> -->
+								@else
 								<li class="cart"><a href="{{ route('register')}}">Register</a>
-								<li class="cart"><a href="{{ route('login') }}">Login</a>							
+								<li class="cart"><a href="{{ route('login') }}">Login</a>
+								@endauth								
+								@endif
 							</ul>
 						</div>
 					</div>

@@ -33,17 +33,18 @@ class ProductController extends Controller
     }
     function readdata(){
         $productData = product::all();
-        return  view ('admin.insertRead',['data' => $productData]);
+        return  view ('insertRead',['data' => $productData]);
     }
 
     //update function
     function updateordelete(Request $req){
        $id = $req->get('Id');
        $ProductName = $req->get('ProductName');
+       $category = $req->get('Category');
        $ProductPrice = $req->get('ProductPrice');
 
        if ($req -> get('update')=='Update'){
-        return view ('admin.updateView',['ProductId' => $id, 'ProductName'=>$ProductName, 'Category'=>$category,'ProductPrice'=>$ProductPrice]);
+        return view ('updateView',['ProductId' => $id, 'ProductName'=>$ProductName, 'Category'=>$category,'ProductPrice'=>$ProductPrice]);
        }
        else{
         $prod = product::find($id);
@@ -54,6 +55,7 @@ class ProductController extends Controller
     function update(Request $req){
         $ProductId = $req -> get('ProductId');
         $ProductName = $req->get('ProductName');
+        $category = $req -> get('Category');
        $ProductPrice = $req->get('ProductPrice');
 
        $prod = product::find($ProductId);
@@ -62,4 +64,10 @@ class ProductController extends Controller
        $prod -> save();
        return redirect('crud');
     }
+
+
+    // public function shop(){
+    //     $product=Product::all();
+    //     return view('shop', compact('Product'));
+    // }
 }
