@@ -33,7 +33,7 @@ class ProductController extends Controller
     }
     function readdata(){
         $productData = product::all();
-        return  view ('insertRead',['data' => $productData]);
+        return  view ('crud',['data' => $productData]);
     }
 
     //update function

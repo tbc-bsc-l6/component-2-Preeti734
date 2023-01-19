@@ -1,4 +1,4 @@
-@extends ('crud')
+@extends ('dashboard')
 @section('content')
 
 <div class = "col-md-4 m-auto border mt-3 p-2 border-info">

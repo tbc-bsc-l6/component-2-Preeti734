@@ -30,6 +30,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/insertRead', function(){
+    return view('insertRead');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/index', [AdminController::class, 'index'])->name('FrontEnd.index');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

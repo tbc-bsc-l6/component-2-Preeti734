@@ -35,7 +35,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="user-panel mt-3 pb-3">
         <div class="info">
           <h3 style="color: #fff">{{ auth()->user()->name}}</h3>
         </div>
@@ -49,7 +49,7 @@
           <li class="nav-item menu-open">
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('category')}}" class="nav-link">
+                <a href="{{url('crud')}}" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                   <p>Category</p>
                 </a>
@@ -58,7 +58,7 @@
             </ul>
           </li>
           <li class="nav-item">
-                <a href="{{url('/crud')}}" class="nav-link">
+                <a href="{{url('/insertRead')}}" class="nav-link">
                 <i class="nav-icon fas fa-table"></i>
                   <p>Add Products</p>
                 </a>
