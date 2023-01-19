@@ -32,8 +32,12 @@ class ProductController extends Controller
         return redirect('crud');
     }
     function readdata(){
-        $productData = product::all();
-        return  view ('crud',['data' => $productData]);
+        //pagination gareko
+        // $productData = product::all();
+        return  view ('crud',['data' => product::paginate(3)]);
+    }
+    function display(){
+        return view('productDisplay',['product' => product::paginate(2)]);
     }
 
     //update function

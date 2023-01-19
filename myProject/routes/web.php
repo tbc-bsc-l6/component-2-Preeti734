@@ -54,6 +54,7 @@ require __DIR__.'/auth.php';
 // Route::view('crud','insertRead');
 //used post since image is passed
 Route::post('insertData',[ProductController::class,'insert']);
+Route::get('productDisplay',[ProductController::class,'display']);
 
 //Read data
 Route::get('crud',[ProductController::class,'readdata']);
