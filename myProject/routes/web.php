@@ -67,9 +67,11 @@ Route::get('updatedelete',[ProductController::class, 'updateordelete']);
 
 Route::get('updateData',[ProductController::class, 'update']);
 
+//sorting
+Route::get('/sortMintoMax',[ProductController::class, 'sortMintoMax']);
+Route::get('/sortMaxtoMin',[ProductController::class, 'sortMaxtoMin']);
 
 
-
-
+Route::get('/product_serach',[ProductController::class,'display']);
 
 

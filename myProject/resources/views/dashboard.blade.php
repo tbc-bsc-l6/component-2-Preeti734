@@ -49,7 +49,7 @@
           <li class="nav-item menu-open">
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('crud')}}" class="nav-link">
+                <a href="{{url('/manage_product')}}" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                   <p>Category</p>
                 </a>
@@ -64,7 +64,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('/manage_product')}}" class="nav-link">
+                <a href="{{url('crud')}}" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                   <p>Manage Products</p>
                 </a>

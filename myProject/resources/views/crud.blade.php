@@ -58,7 +58,9 @@
   </tbody>
 </table>
 <!-- pagination ko next page ko lagii -->
-  {{$data->links()}}
+
+  <div class="clear"></div>
+{!!$data->withQueryString()->links('pagination::bootstrap-5')!!}
 </div>
 </div>
 </div>

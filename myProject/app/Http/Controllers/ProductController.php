@@ -37,7 +37,7 @@ class ProductController extends Controller
         return  view ('crud',['data' => product::paginate(3)]);
     }
     function display(){
-        return view('productDisplay',['product' => product::paginate(2)]);
+        return view('FrontEnd.productDisplay',['product' => product::paginate(4)]);
     }
 
     //update function
@@ -69,9 +69,18 @@ class ProductController extends Controller
        return redirect('crud');
     }
 
+//shop page but sorting from Max price to Min price
+public function sortMaxtoMin(){
+    $category=Category::all();
+    $product = Product::orderBy('price', 'DESC')->paginate(6);
+    return view('shop', compact('product', 'category'));
+}
 
-    // public function shop(){
-    //     $product=Product::all();
-    //     return view('shop', compact('Product'));
-    // }
+//shop page but sorting from Min price to Max price
+public function sortMintoMax(){
+    $category=Category::all();
+    $product = Product::orderBy('price', 'ASC')->paginate(6);
+    return view('shop', compact('product', 'category'));
+}
+  
 }

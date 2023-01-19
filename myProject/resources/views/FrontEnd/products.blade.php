@@ -24,9 +24,17 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
-						<h2>Best Sellers</h2>
+						<h2>Our Products</h2>
+
+						<!-- <form action="{{url('product_search')}}" method = "GET">
+						@csrf
+						<input style = "width: 500px" type="text" name=""search placeholder = "Search for Something">
+						<button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
+						</form> -->
+				
 					</div>
 				</div>
+				
 				<div class="row row-pb-md">
 					<div class="col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
@@ -210,7 +218,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<p><a href="#" class="btn btn-primary btn-lg">Shop All Products</a></p>
+						<p><a href="{{'productDisplay'}}" class="btn btn-primary btn-lg">Shop All Products</a></p>
 					</div>
 				</div>
 			</div>
